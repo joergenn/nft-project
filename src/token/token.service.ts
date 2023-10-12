@@ -5,6 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Token } from './entities/token.entity';
 import { Repository } from 'typeorm';
 import { BadRequestException } from '@nestjs/common/exceptions';
+import metadataObject from 'src/interfaces/metadataObject';
 
 @Injectable()
 export class TokenService {
@@ -43,7 +44,7 @@ export class TokenService {
     if(token){
       return token
     }
-    const metadata:Object = await this.etherService.getToken(id);
+    const metadata:metadataObject = await this.etherService.getToken(id);
     const owner:string = await this.etherService.getOwner(id);
     const newToken = this.tokenService.create({
       "tokenId": id,

@@ -7,8 +7,8 @@ import { Token } from './entities/token.entity';
 import { EthersModule } from 'src/ethers/ethers.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Token])],
+  imports: [TypeOrmModule.forFeature([Token]), EthersModule],
   controllers: [TokenController],
-  providers: [TokenService, EthersService],
+  providers: [TokenService],
 })
 export class TokenModule {}

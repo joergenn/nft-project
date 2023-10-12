@@ -1,4 +1,5 @@
 import { IsString, IsNumber, IsDefined } from "class-validator";
+import metadataObject from "src/interfaces/metadataObject";
 
 export class CreateTokenDto {
     @IsNumber()
@@ -14,5 +15,5 @@ export class CreateTokenDto {
     owner: string;
 
     @IsDefined()
-    metadata: Object;
+    metadata: metadataObject;
 }
