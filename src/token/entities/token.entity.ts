@@ -1,3 +1,4 @@
+import metadataObject from "src/interfaces/metadataObject";
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
 
 @Entity()
@@ -19,5 +20,5 @@ export class Token {
     @Column({
         type: "json",
     })
-    metadata: Object;
+    metadata: metadataObject;
 }

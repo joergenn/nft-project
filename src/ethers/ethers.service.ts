@@ -29,12 +29,12 @@ export class EthersService {
     }
 
     async getOwner(tokenId: number){
-        return await this.contract.ownerOf(240)
+        return await this.contract.ownerOf(tokenId)
     }
 
     async getToken(tokenId: number){
         try {
-            const response = await axios.get(await this.contract.tokenURI(240));
+            const response = await axios.get(await this.contract.tokenURI(tokenId));
             return response.data;
         } catch (error) {
             console.error(error);
