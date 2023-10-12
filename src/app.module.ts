@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';
 import { TokenModule } from './token/token.module';
+import { EthersModule } from './ethers/ethers.module';
 import * as Joi from 'joi';
 
 @Module({
@@ -19,7 +20,8 @@ import * as Joi from 'joi';
       })
     }), 
     DatabaseModule, 
-    TokenModule,
+    TokenModule, 
+    EthersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
